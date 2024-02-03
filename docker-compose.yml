@@ -30,8 +30,8 @@ services:
       - 3003:3000
     # gitでnode_modulesを管理していないので、clone後はpackage.jsonに基づいて
     # npm installでpackageをインストールする必要がある
-    command: sh -c "npm install && npm run dev"
-    # command: sh -c "npm run dev"
+    # command: sh -c "npm install && npm run dev"
+    command: sh -c "npm run dev"
     tty: true
     stdin_open: true
   
