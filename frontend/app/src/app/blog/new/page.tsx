@@ -3,7 +3,7 @@ import {useTitleState} from 'hooks/useTitleState'
 import {useContentState} from 'hooks/useContentState'
 import Link from 'next/link';
 
-const createBlog = () => {
+const blogNew = () => {
   const [title, handleTitleChange] = useTitleState();
   const [content, handleContentChange] = useContentState();
 
@@ -36,4 +36,4 @@ const createBlog = () => {
   );
 }
 
-export default createBlog;
+export default blogNew;
