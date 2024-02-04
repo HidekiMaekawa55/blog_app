@@ -19,6 +19,12 @@ class BlogsController < ApplicationController
   end
 
   def update
+    @blog = Blog.find(params[:id])
+    if @blog.update(blog_params)
+      render status: :ok
+    else
+      render status: :error
+    end
   end
 
   def delete
