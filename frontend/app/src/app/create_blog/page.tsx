@@ -1,6 +1,7 @@
 'use client'
 import {useTitleState} from 'hooks/useTitleState'
 import {useContentState} from 'hooks/useContentState'
+import Link from 'next/link';
 
 const createBlog = () => {
   const [title, handleTitleChange] = useTitleState();
@@ -29,6 +30,8 @@ const createBlog = () => {
       <p>本文</p>
       <textarea value={content} onChange={handleContentChange}/><br />
       <button onClick={submitForm}>作成</button>
+      <br />
+      <Link href="/"><button>トップ画面に戻る</button></Link>
     </div>
   );
 }
