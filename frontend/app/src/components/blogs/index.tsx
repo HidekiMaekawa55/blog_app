@@ -12,7 +12,7 @@ export const Blogs = async () => {
             <h2>{blog.title}</h2>
             <p>{blog.content}</p>
             <Link href={`/blog/${blog.id}`}><button>詳細</button></Link>
-            <button>編集</button>
+            <Link href={`/blog/${blog.id}/edit`}><button>編集</button></Link>
             <button>削除</button>
           </div>
         );
