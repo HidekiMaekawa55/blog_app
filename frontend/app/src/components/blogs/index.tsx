@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const Blogs = async () => {
   const res = await fetch("http://api:3000/blogs", { cache: 'no-store' });
   const blogs = await res.json();
@@ -9,6 +11,7 @@ export const Blogs = async () => {
           <div key={blog.id}>
             <h2>{blog.title}</h2>
             <p>{blog.content}</p>
+            <Link href={`/blog/${blog.id}`}><button>詳細</button></Link>
             <button>編集</button>
             <button>削除</button>
           </div>

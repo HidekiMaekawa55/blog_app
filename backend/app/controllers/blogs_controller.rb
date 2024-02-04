@@ -4,6 +4,11 @@ class BlogsController < ApplicationController
     render json: @blogs
   end
 
+  def show
+    @blog = Blog.select(:id, :title, :content, :created_at).find(params[:id])
+    render json: @blog
+  end
+
   def create
     @blog = Blog.new(blog_params)
     if @blog.save
