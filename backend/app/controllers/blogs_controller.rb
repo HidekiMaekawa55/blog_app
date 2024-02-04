@@ -8,6 +8,12 @@ class BlogsController < ApplicationController
   end
 
   def create
+    @blog = Blog.new(blog_params)
+    if @blog.save
+      render status: :created
+    else
+      render status: :error
+    end
   end
 
   def edit
@@ -17,5 +23,11 @@ class BlogsController < ApplicationController
   end
 
   def delete
+  end
+
+  private
+
+  def blog_params
+    params.require(:blog).permit(:title, :content)
   end
 end
