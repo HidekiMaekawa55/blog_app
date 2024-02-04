@@ -27,7 +27,13 @@ class BlogsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    @blog = Blog.find(params[:id])
+    if @blog.delete
+      render status: :ok
+    else
+      render status: :error
+    end
   end
 
   private
