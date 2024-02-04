@@ -4,9 +4,6 @@ class BlogsController < ApplicationController
     render json: @blogs
   end
 
-  def new
-  end
-
   def create
     @blog = Blog.new(blog_params)
     if @blog.save
@@ -14,9 +11,6 @@ class BlogsController < ApplicationController
     else
       render status: :error
     end
-  end
-
-  def edit
   end
 
   def update
