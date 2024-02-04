@@ -1,5 +1,5 @@
 export const Blogs = async () => {
-  const res = await fetch("http://api:3000/blogs");
+  const res = await fetch("http://api:3000/blogs", { cache: 'no-store' });
   const blogs = await res.json();
 
   return (
