@@ -25,7 +25,7 @@ services:
   front:
     build: ./frontend/
     volumes:
-      - ./frontend/app:/front
+      - ./frontend:/front
     ports:
       - 3003:3000
     # gitでnode_modulesを管理していないので、clone後はpackage.jsonに基づいて
