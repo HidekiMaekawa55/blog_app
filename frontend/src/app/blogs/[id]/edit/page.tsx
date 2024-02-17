@@ -1,17 +1,17 @@
-import Link from 'next/link';
-import {BlogForm} from 'components/forms/blog'
+import { BaseTemplate } from 'components/templates/baseTemplate';
+import { BlogFormContainer } from 'components/Organisms/containers/BlogFormContainer';
+import { getBlog } from 'utils/blog';
 
-const blogEdit = async ({params}) => {
-  const res = await fetch(`http://api:3000/blogs/${params.slug}`, { cache: 'no-store' });
-  const blog = await res.json();
+const BlogEdit = async ({params}) => {
+  const blog = await getBlog(params.id);
 
   return (
     <div>
-      <h1>ブログ編集画面</h1>
-      <BlogForm buttonName='更新する' blog={blog} />
-      <Link href="/"><button>トップ画面に戻る</button></Link>
+      <BaseTemplate pageTitle="ブログ編集画面" href="/" linkName="トップ画面に戻る">
+        <BlogFormContainer buttonName='更新する' blog={blog} />
+      </BaseTemplate>
     </div>
   );
 }
 
-export default blogEdit;
+export default BlogEdit;

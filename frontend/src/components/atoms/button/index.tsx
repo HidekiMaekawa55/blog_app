@@ -11,3 +11,7 @@ export const EditButton = (props) => (
 export const DeleteButton = (props) => (
   <button onClick={props.onClick}>削除</button>
 );
+
+export const SubmitButton = (props) => (
+  <button onClick={props.onSubmit}>{props.buttonName}</button>
+);

@@ -9,10 +9,30 @@ export const getBlogs = async () => {
 }
 
 export const deleteBlog = async (id) => {
-  await fetch(`http://localhost:3004/blogs/${id}`, {
+  fetch(`http://localhost:3004/blogs/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json'
     }
+  });
+}
+
+export const createBlog = async (blogParams) => {
+  fetch("http://localhost:3004/blogs", {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(blogParams)
+  });
+}
+
+export const updateBlog = async (blog_id, blogParams) => {
+  fetch(`http://localhost:3004/blogs/${blog_id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(blogParams)
   });
 }
