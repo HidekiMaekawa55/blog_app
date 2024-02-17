@@ -18,4 +18,3 @@ export interface ContentTextAreaProps {
 export interface BlogDetailProps {
   blog: Blog;
 }
-
