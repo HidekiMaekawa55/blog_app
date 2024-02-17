@@ -1,4 +1,6 @@
-export const TitleInputField = (props) => {
+import { TitleInputFieldProps } from "interfaces/Molecules";
+
+export const TitleInputField = (props: TitleInputFieldProps) => {
   return (
     <div>
       <label>タイトル</label><br/>

@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { BaseTemplateProps } from "interfaces/Template";
 
-export const BaseTemplate = (props) => {
+export const BaseTemplate = (props: BaseTemplateProps) => {
   return (
     <main>
       <h1>{props.pageTitle}</h1>
@@ -9,4 +10,3 @@ export const BaseTemplate = (props) => {
     </main>
   );
 }
-

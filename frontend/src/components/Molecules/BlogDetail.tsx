@@ -1,4 +1,6 @@
-export const BlogDetail = (props) => {
+import { BlogDetailProps } from "interfaces/Molecules";
+
+export const BlogDetail = (props: BlogDetailProps) => {
   return (
     <div>
       <h2>タイトル：{props.blog.title}</h2>

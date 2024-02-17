@@ -1,6 +1,7 @@
 import { DeleteButton, DetailButton, EditButton } from "components/atoms/button";
+import { BlogListItemProps } from "interfaces/Molecules";
 
-export const BlogListItem = (props) => {
+export const BlogListItem = (props: BlogListItemProps) => {
   return (
     <div>
       <h2>{props.blog.title}</h2>

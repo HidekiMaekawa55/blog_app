@@ -4,8 +4,9 @@ import { BlogForm } from 'components/Organisms/presentationals/BlogForm';
 import { useTitleState } from 'hooks/useTitleState'
 import { useContentState } from 'hooks/useContentState'
 import { createBlog, updateBlog } from 'utils/blog';
+import { BlogFormContainerProps } from 'interfaces/Organism';
 
-export const BlogFormContainer = (props) => {
+export const BlogFormContainer = (props: BlogFormContainerProps) => {
   const [title, handleTitleChange] = useTitleState(props.blog?.title);
   const [content, handleContentChange] = useContentState(props.blog?.content);
 

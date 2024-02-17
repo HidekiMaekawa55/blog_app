@@ -1,6 +1,7 @@
 import { BlogListItem } from "components/Molecules/BlogListItem";
+import { BlogListProps } from "interfaces/Organism";
 
-export const BlogList = (props) => {
+export const BlogList = (props: BlogListProps) => {
   return (
     <div>
       {props.blogs.map((blog) => {

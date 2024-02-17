@@ -2,7 +2,7 @@ import { BaseTemplate } from 'components/templates/baseTemplate';
 import { BlogFormContainer } from 'components/Organisms/containers/BlogFormContainer';
 import { getBlog } from 'utils/blog';
 
-const BlogEdit = async ({params}) => {
+const BlogEdit = async ({ params }: { params: { id: number } }) => {
   const blog = await getBlog(params.id);
 
   return (
