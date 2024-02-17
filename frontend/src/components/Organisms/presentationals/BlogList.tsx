@@ -1,11 +1,11 @@
-import { Blog } from "components/blog";
+import { BlogListItem } from "components/Molecules/BlogListItem";
 
 export const BlogList = (props) => {
   return (
     <div>
       {props.blogs.map((blog) => {
         return(
-          <Blog key={blog.id} blog={blog} onDelete={props.onDelete} />
+          <BlogListItem key={blog.id} blog={blog} onDelete={props.onDelete} />
         );
       })}
     </div>

@@ -6,7 +6,7 @@ const Home = async () => {
   const blogs = await getBlogs();
 
   return (
-    <BaseTemplate pageTitle="Blogアプリ" href="/blog/new" linkName="新規作成画面">
+    <BaseTemplate pageTitle="Blogアプリ" href="/blogs/new" linkName="新規作成画面">
       <BlogListContainer blogs={blogs}/>
     </BaseTemplate>
   );
