@@ -1,14 +1,15 @@
-import { Blogs } from "components/blogs";
-import Link from "next/link";
+import { BaseTemplate } from "components/templates/baseTemplate";
+import { BlogListContainer } from "components/Organisms/containers/BlogListContainer";
+import { getBlogs } from "utils/blog";
 
-const home = () => {
+const Home = async () => {
+  const blogs = await getBlogs();
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Blogアプリ</h1>
-      <Link href="/blog/new"><button>新規作成画面</button></Link>
-      <Blogs />
-    </main>
+    <BaseTemplate pageTitle="Blogアプリ" href="/blog/new" linkName="新規作成画面">
+      <BlogListContainer blogs={blogs}/>
+    </BaseTemplate>
   );
 }
 
-export default home;
+export default Home;
